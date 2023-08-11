@@ -1,22 +1,65 @@
 import { useState } from 'react'
-import  {BrowserRouter as Router, Routes, Route} from "react-router-dom"
+import  {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom"
 
 import './App.css'
+import NavBar from './Component/NavBar'
+import ShowsList from './Component/ShowRelevant/ShowsList'
 
 function App() {
   // const [count, setCount] = useState(0)
-  console.log("One of Our Environment Variables: ", import.meta.env.VITE_10_1_VAR)
+  // console.log("One of Our Environment Variables: ", import.meta.env.VITE_10_1_VAR)
+const var10_1 =  import.meta.env.VITE_10_1_VAR
 
   return (
     <>
     <Router >
+<header>
+<h1>ScreenViews</h1>
+<h2>-TEST- {var10_1} </h2> <br />
+ <NavBar />
+</header>
 
-      <h1>ScreenViews</h1>
+      <Routes>
+        <Route path='/' element={ <h1>Home</h1>} />
+        <Route path='/shows' element={ <h1>All shows</h1>}/>
+        <Route path='/shows/new' element={ <h1>Form for new show</h1>}/>
+        <Route path='/movies' element={ <h1>All Movies</h1>}/>
+      </Routes>
+<ShowsList />
 
-      <h2>-TEST- {import .meta. env.VITE_10_1_VAR} </h2>
+      <footer>
+        10.1 ©
+      </footer>
       </Router>
     </>
   )
 }
 
 export default App
+
+
+/*
+CRUD FOR MOVIES
+   Movies Endpoint:       /api/movies
+
+CRUD ACTION     REQUEST                 RELEVANT ROUTE/API
+
+CREATE           POST MOVIES/NEW
+READ                GET
+UPDATE 
+DESTROY
+
+CRUD FOR SHOWS
+   Shows Endpoint:       /api/shows 
+
+CREATE           POST     SHOWS/NEW
+READ              GET     shows/ (index) or /shows/:id
+UPDATE 
+DESTROY
+
+
+
+
+
+
+*/
