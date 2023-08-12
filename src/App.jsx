@@ -14,18 +14,18 @@ const var10_1 =  import.meta.env.VITE_10_1_VAR
     <>
     <Router >
 <header>
-<h1>ScreenViews</h1>
-<h2>-TEST- {var10_1} </h2> <br />
+<h1><em>ScreenViews</em></h1>
+{/* <h2>-TEST- {var10_1} </h2> <br /> */}
  <NavBar />
 </header>
 
       <Routes>
         <Route path='/' element={ <h1>Home</h1>} />
-        <Route path='/shows' element={ <h1>All shows</h1>}/>
+        <Route path='/shows' element={ <h3>All shows <ShowsList /></h3>}/>
         <Route path='/shows/new' element={ <h1>Form for new show</h1>}/>
         <Route path='/movies' element={ <h1>All Movies</h1>}/>
       </Routes>
-<ShowsList />
+
 
       <footer>
         10.1 ©

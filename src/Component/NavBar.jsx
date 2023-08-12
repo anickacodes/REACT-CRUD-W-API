@@ -1,24 +1,42 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+
+import "./NavBar.css";
+import { useState } from "react";
+
+
+
 
 const NavBar = () => {
+    const [isNavExpanded, setIsNavExpanded] = useState(false)
+  return (
+    <div className={
+        isNavExpanded ? "full-navbar expanded" : "full-navbar"
+      }>
+          <button
+        className="screen-roll"
+        onClick={() => {
+          setIsNavExpanded(!isNavExpanded);
+        }}
+      ></button>
+        
+      <ul>
 
-return (
-    <div>
-        <Link to={'/'}>
-            <h3>Home 🛖</h3>
-        </Link>
+        <li>
+          <Link to={"/"}>Home 🛖</Link>
+        </li>
 
-        <Link to={'/shows'}>
-           <h3> All Shows: 🎪</h3>
-        </Link>
+        <li>
+          <Link to={"/shows"}>All Shows: 🎪</Link>
+        </li>
 
-        <Link to={'/movies'}>
-           <h3> All Movies: 🎬</h3>
-        </Link>
-    </div>
+        <li>
+          <Link to={"/movies"}>All Movies: 🎬</Link>
+        </li>
+
+      </ul>
     
-)
-}
+    </div>
+  );
+};
 
-
-export default NavBar
+export default NavBar;
