@@ -4,6 +4,7 @@ import  {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom"
 import './App.css'
 import NavBar from './Component/NavBar'
 import ShowsList from './Component/ShowRelevant/ShowsList'
+import ShowsNew from './Component/ShowRelevant/ShowsNew'
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -22,8 +23,8 @@ const var10_1 =  import.meta.env.VITE_10_1_VAR
       <Routes>
         <Route path='/' element={ <h1>Home</h1>} />
         <Route path='/shows' element={ <h3>All shows <ShowsList /></h3>}/>
-        <Route path='/shows/new' element={ <h1>Form for new show</h1>}/>
-        <Route path='/movies' element={ <h1>All Movies</h1>}/>
+        <Route path='/shows/new' element={ <h3>Form for new show <ShowsNew /></h3>}/>
+        <Route path='/movies' element={ <h3>All Movies</h3>}/>
       </Routes>
 
 

@@ -46,11 +46,13 @@
 
     .full-navbar.expanded ul {
         display: block;
+       
     }
 
     .full-navbar li {
         text-align: center;
         margin: 0;
+        cursor: pointer;
     }
 
     .full-navbar Link {
@@ -62,4 +64,6 @@
     .full-navbar li:hover {
         background-color: #ccc7c7;
     }
+
+   
 }
