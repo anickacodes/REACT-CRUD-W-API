@@ -1,23 +1,59 @@
 import React, { useState } from "react";
 
-const AddNewShow = ({ allShows }) => {
+const AddNewShow = ({ allShows, setAllShows }) => {
   const [newShowTitle, setNewShowTitle] = useState("");
+  const [newShowType, setNewShowType] = useState("")
+  // catch this eror if not a tv show 
+  const [newShowCountry, setNewShowCountry] = useState("");
+  const [newShowReleaseYear, setNewShowReleaseYear] = useState(2023);
+  const [newShowRating, setNewShowRating] = useState("");
+  const [newShowDateAdded, setNewShowDateAdded] = useState("");
+  const [newShowDuration, setNewShowDuration] = useState("");
+  const [newShowListedIn, setNewShowListedIn] = useState("");
   const [newShowDescription, setNewShowDescription] = useState("");
 
-  const handleSubmitNewShow = (e) => {
+  const handleSubmitNewShow = async (e) => {
     e.preventDefault();
 
     // Create a new show object using the form data
     const newShowAdded = {
+      id: "",
       title: newShowTitle,
+      type: newShowType,
+      country: newShowCountry,
+      dateAdded: newShowDateAdded, // TODO: add function to set current date -
+      releaseYear: newShowReleaseYear,
+      rating: newShowRating,
+      duration: newShowDuration,
+      listedIn: newShowListedIn,
       description: newShowDescription,
     };
 
-    // TODO: Send newShowAdded to the server or update state in the parent component
+    try {
+      const response = await fetch("http://localhost:5001/api/shows", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newShowAdded),
+      });
 
-    // Clear form fields after submission
-    setNewShowTitle("");
-    setNewShowDescription("");
+      if (response.ok) {
+        setAllShows([...allShows, newShowAdded]);
+        console.log("New show added successfully!");
+        // Clear form fields after successful submission
+        setNewShowTitle("");
+        setNewShowCountry("")
+        setNewShowListedIn("")
+        setNewShowRating("")
+        setNewShowReleaseYear("")
+        setNewShowDescription("");
+      } else {
+        console.log("Failed to add new show");
+      }
+    } catch (error) {
+      console.error("Error adding new show:", error);
+    }
   };
 
   return (
@@ -32,6 +68,41 @@ const AddNewShow = ({ allShows }) => {
           />
         </label>
         <br />
+        <label>Type:  <input
+        type="text"
+            value={newShowType}
+            onChange={(event) => setNewShowType(event.target.value)}
+          /></label>
+           <br />
+        <label>Country:  <input
+        type="text"
+            value={newShowCountry}
+            onChange={(event) => setNewShowCountry(event.target.value)}
+          /></label>
+           <br />
+        <label>Date Added: <input
+        type="date"
+            value={newShowDateAdded}
+            onChange={(event) => setNewShowDateAdded(event.target.value)}
+          /> </label>  <br />
+        <label>Release Year:  <input
+        type="number"
+            value={newShowReleaseYear}
+            onChange={(event) => setNewShowReleaseYear(event.target.value)}
+          /></label>  <br />
+        <label>Rating:  <input
+            value={newShowRating}
+            onChange={(event) => setNewShowRating(event.target.value)}
+          /> </label>  <br />
+        <label>Duration:  <input 
+        type="text"
+            value={newShowDuration}
+            onChange={(event) => setNewShowDuration(event.target.value)}
+          /></label>  <br />
+        <label>Listed In:  <textarea
+            value={newShowListedIn}
+            onChange={(event) => setNewShowListedIn(event.target.value)}
+          /></label> <br />
         <label>
           Description:
           <textarea
@@ -46,5 +117,4 @@ const AddNewShow = ({ allShows }) => {
   );
 };
 
-
-export default AddNewShow
+export default AddNewShow;

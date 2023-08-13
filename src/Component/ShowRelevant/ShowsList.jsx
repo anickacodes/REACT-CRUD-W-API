@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import AddNewShow from "./addNewShow";
 
 
 const ShowsList = () => {
@@ -26,7 +27,7 @@ const ShowsList = () => {
         {showsToRender}
       </div>
       <div>
-        <ShowsNew allShows={allShows} />
+        <AddNewShow allShows={allShows} setAllShows={setAllShows}/>
       </div>
     </>
   );
