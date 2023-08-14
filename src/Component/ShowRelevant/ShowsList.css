@@ -1,0 +1,15 @@
+shows-card-styles {
+    background-color: teal;
+    border: 2px solid rgb(102, 39, 39);
+    grid-template-columns: repeat(3, 1fr);
+}
+    
+
+
+.shows-list-styles {
+    border: 10px solid white;
+    
+}
+
+rendered-shows {
+}

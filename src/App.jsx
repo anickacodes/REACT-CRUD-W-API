@@ -4,8 +4,8 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import NavBar from "./Component/NavBar";
 import ShowsList from "./Component/ShowRelevant/ShowsList";
-import AddNewShow from "./Component/ShowRelevant/addNewShow";
-
+import AddNewShow from "./Component/ShowRelevant/ShowsNewForm";
+import ShowsNewForm from "./Component/ShowRelevant/ShowsNewForm";
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -37,7 +37,7 @@ function App() {
             path="/shows/new"
             element={
               <h3>
-                Form for new show <AddNewShow />
+                 <ShowsNewForm />
               </h3>
             }
           />

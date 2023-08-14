@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const AddNewShow = ({ allShows, setAllShows }) => {
+const ShowsNewForm = ({ allShows, setAllShows }) => {
   const [newShowTitle, setNewShowTitle] = useState("");
   const [newShowType, setNewShowType] = useState("")
   // catch this eror if not a tv show 
@@ -58,11 +58,13 @@ const AddNewShow = ({ allShows, setAllShows }) => {
 
   return (
     <div className="newShow-form">
+      <h2>Add a new Show</h2>
       <form onSubmit={handleSubmitNewShow}>
         <label>
           Title:
           <input
             type="text"
+            id="title"
             value={newShowTitle}
             onChange={(event) => setNewShowTitle(event.target.value)}
           />
@@ -117,4 +119,4 @@ const AddNewShow = ({ allShows, setAllShows }) => {
   );
 };
 
-export default AddNewShow;
+export default ShowsNewForm;

@@ -3,6 +3,7 @@
     height: 60px;
     width: max-content;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     position: relative;
