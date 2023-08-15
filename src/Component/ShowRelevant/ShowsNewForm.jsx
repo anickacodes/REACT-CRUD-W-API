@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-
+import "./ShowsNewForm.css";
 const ShowsNewForm = ({ allShows, setAllShows }) => {
   const [newShowTitle, setNewShowTitle] = useState("");
-  const [newShowType, setNewShowType] = useState("")
-  // catch this eror if not a tv show 
+  const [newShowType, setNewShowType] = useState("");
+  // catch this eror if not a tv show
   const [newShowCountry, setNewShowCountry] = useState("");
   const [newShowReleaseYear, setNewShowReleaseYear] = useState(2023);
   const [newShowRating, setNewShowRating] = useState("");
@@ -43,10 +43,10 @@ const ShowsNewForm = ({ allShows, setAllShows }) => {
         console.log("New show added successfully!");
         // Clear form fields after successful submission
         setNewShowTitle("");
-        setNewShowCountry("")
-        setNewShowListedIn("")
-        setNewShowRating("")
-        setNewShowReleaseYear("")
+        setNewShowCountry("");
+        setNewShowListedIn("");
+        setNewShowRating("");
+        setNewShowReleaseYear("");
         setNewShowDescription("");
       } else {
         console.log("Failed to add new show");
@@ -57,65 +57,94 @@ const ShowsNewForm = ({ allShows, setAllShows }) => {
   };
 
   return (
-    <div className="newShow-form">
-      <h2>Add a new Show</h2>
-      <form onSubmit={handleSubmitNewShow}>
-        <label>
-          Title:
-          <input
-            type="text"
-            id="title"
-            value={newShowTitle}
-            onChange={(event) => setNewShowTitle(event.target.value)}
-          />
-        </label>
-        <br />
-        <label>Type:  <input
-        type="text"
-            value={newShowType}
-            onChange={(event) => setNewShowType(event.target.value)}
-          /></label>
-           <br />
-        <label>Country:  <input
-        type="text"
-            value={newShowCountry}
-            onChange={(event) => setNewShowCountry(event.target.value)}
-          /></label>
-           <br />
-        <label>Date Added: <input
-        type="date"
-            value={newShowDateAdded}
-            onChange={(event) => setNewShowDateAdded(event.target.value)}
-          /> </label>  <br />
-        <label>Release Year:  <input
-        type="number"
-            value={newShowReleaseYear}
-            onChange={(event) => setNewShowReleaseYear(event.target.value)}
-          /></label>  <br />
-        <label>Rating:  <input
-            value={newShowRating}
-            onChange={(event) => setNewShowRating(event.target.value)}
-          /> </label>  <br />
-        <label>Duration:  <input 
-        type="text"
-            value={newShowDuration}
-            onChange={(event) => setNewShowDuration(event.target.value)}
-          /></label>  <br />
-        <label>Listed In:  <textarea
-            value={newShowListedIn}
-            onChange={(event) => setNewShowListedIn(event.target.value)}
-          /></label> <br />
-        <label>
-          Description:
-          <textarea
-            value={newShowDescription}
-            onChange={(event) => setNewShowDescription(event.target.value)}
-          />
-        </label>
-        <br />
-        <button type="submit">Add New Show</button>
-      </form>
-    </div>
+    <fieldset>
+      <div className="newShow-form">
+        <h2>Add a new Show</h2>
+        <form onSubmit={handleSubmitNewShow}>
+          <label>
+            Title:
+            <input
+              type="text"
+              id="title"
+              value={newShowTitle}
+              onChange={(event) => setNewShowTitle(event.target.value)}
+            />
+          </label>
+          <br />
+          <label>
+            Type:{" "}
+            <input
+              type="text"
+              value={newShowType}
+              onChange={(event) => setNewShowType(event.target.value)}
+            />
+          </label>
+          <br />
+          <label>
+            Rating:{" "}
+            <input
+              value={newShowRating}
+              onChange={(event) => setNewShowRating(event.target.value)}
+            />{" "}
+          </label>{" "}
+          <br />
+          <label>
+            Country:{" "}
+            <input
+              type="text"
+              value={newShowCountry}
+              onChange={(event) => setNewShowCountry(event.target.value)}
+            />
+          </label>
+          <br />
+          <label>
+            Listed In:{" "}
+            <input
+              type="text"
+              value={newShowListedIn}
+              onChange={(event) => setNewShowListedIn(event.target.value)}
+            />
+          </label>{" "}
+          <br />
+          <label>
+            Duration:{" "}
+            <input
+              type="text"
+              value={newShowDuration}
+              onChange={(event) => setNewShowDuration(event.target.value)}
+            />
+          </label>{" "}
+          <br />
+          <label>
+            Date Added:{" "}
+            <input
+              type="date"
+              value={newShowDateAdded}
+              onChange={(event) => setNewShowDateAdded(event.target.value)}
+            />{" "}
+          </label>{" "}
+          <br />
+          <label>
+            Release Year:{" "}
+            <input
+              type="number"
+              value={newShowReleaseYear}
+              onChange={(event) => setNewShowReleaseYear(event.target.value)}
+            />
+          </label>{" "}
+          <br />
+          <label>
+            Description:
+            <textarea
+              value={newShowDescription}
+              onChange={(event) => setNewShowDescription(event.target.value)}
+            />
+          </label>
+          <br />
+          <button type="submit">Add New Show</button>
+        </form>
+      </div>
+    </fieldset>
   );
 };
 

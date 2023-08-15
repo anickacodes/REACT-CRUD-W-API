@@ -7,9 +7,10 @@ shows-card-styles {
 
 
 .shows-list-styles {
-    border: 10px solid white;
+    border: thick double thistle;
     
 }
 
 rendered-shows {
+    border: 1px dashed grey;
 }

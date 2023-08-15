@@ -1,0 +1,27 @@
+.newShow-form {
+    border: 2px inset rgb(255, 0, 0);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 38vh;
+    grid-auto-rows: 20vh;
+    grid-gap: 10px;
+    font-family: fantasy;
+}
+
+h2 {
+    font-family: fantasy;
+}
+input, textarea {
+    border: 1px solid rgb(111, 254, 168);
+    text-align: center;
+    font-family: fantasy;
+}
+
+label {
+    color: rgb(200, 218, 200);
+    
+}
+
+button {
+    color: mediumturquoise;
+}

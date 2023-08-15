@@ -34,15 +34,8 @@
 } */
 
 header {
-  color: rgba(231, 138, 26, 0.814);
+  color: rgba(89, 173, 171, 0.663);
+  font-family: fantasy;
   font-size: 1rem;
 }
 
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}

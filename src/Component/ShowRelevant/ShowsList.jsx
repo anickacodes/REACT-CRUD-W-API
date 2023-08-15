@@ -87,7 +87,8 @@ const ShowsList = () => {
   return (
     <>
       <div className="shows-list-styles">
-        <h2>Shows List</h2>
+      
+        <h2>All Shows List</h2>
         <div className="rendered-shows">{showsToRender}</div>
       </div>
       <div className="">

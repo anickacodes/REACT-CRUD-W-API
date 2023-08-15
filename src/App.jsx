@@ -29,7 +29,7 @@ function App() {
             path="/shows"
             element={
               <h3>
-                All shows <ShowsList />
+ <ShowsList />
               </h3>
             }
           />

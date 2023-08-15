@@ -1,7 +1,7 @@
 .full-navbar {
     border: .3em groove rgb(114, 94, 94);
-    height: 60px;
-    width: max-content;
+    height: auto;
+    width:auto;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -10,9 +10,14 @@
     padding: 0.2rem 1.1rem;
     background-color: #b2101033;
     /* color: black; */
-    box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
+    
 }
 
+h1 {
+    box-shadow: 0 7px 33px 11px rgba(207, 81, 22, 0.291);
+    text-shadow: -1px 1px 44px rgb(143, 3, 3);
+    padding: 18px;
+}
 .full-navbar ul {
     display: flex;
     padding: 0;
@@ -30,7 +35,10 @@
 }
 
 
-
+screen-roll {
+    border: 2px solid white;
+    
+}
 
 
 @media screen and (max-width: 768px) {
