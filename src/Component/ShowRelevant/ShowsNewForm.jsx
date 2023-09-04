@@ -95,7 +95,7 @@ const ShowsNewForm = ({ allShows, setAllShows }) => {
               value={newShowCountry}
               onChange={(event) => setNewShowCountry(event.target.value)}
             />
-          </label>
+          </label>{" "}
           <br />
           <label>
             Listed In:{" "}
@@ -141,7 +141,9 @@ const ShowsNewForm = ({ allShows, setAllShows }) => {
             />
           </label>
           <br />
-          <button type="submit">Add New Show</button>
+          <button className="btn btn-primary btn-block" type="submit">
+            Add New Show
+          </button>
         </form>
       </div>
     </fieldset>

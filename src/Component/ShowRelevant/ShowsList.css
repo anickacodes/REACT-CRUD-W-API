@@ -1,16 +1,19 @@
-shows-card-styles {
-    background-color: teal;
-    border: 2px solid rgb(102, 39, 39);
-    grid-template-columns: repeat(3, 1fr);
+.show-card-styles {
+    /* background-color: teal;
+    border: 20px solid rgb(217, 193, 193); */
 }
-    
+
+/* .rendered-shows {
+    border: 7px dashed grey;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    color: yellow;
+
+} */
 
 
-.shows-list-styles {
+/* .shows-list-styles {
     border: thick double thistle;
-    
-}
-
-rendered-shows {
-    border: 1px dashed grey;
-}
+    color: yellow;
+} */

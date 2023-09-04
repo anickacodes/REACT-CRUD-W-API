@@ -41,14 +41,9 @@ const ShowsList = () => {
 
   function handleEdit() {}
   const [toggleEdit, setToggleEdit] = useState(false);
-  const [formObj, setFormObj] = useState( {title: "", type:"", duration:""} );
-//individual card component 
-//useEffect that fetches specific obj by id - and render
-
-
-
-
-
+  const [formObj, setFormObj] = useState({ title: "", type: "", duration: "" });
+  //individual card component
+  //useEffect that fetches specific obj by id - and render
 
   const showsToRender = allShows.map((eachShow) => {
     return toggleEdit ? (
@@ -58,7 +53,7 @@ const ShowsList = () => {
           {" "}
           <input />
         </label>{" "}
-        <button
+        <button className="btn btn-default"
           onClick={(se) => {
             console.log();
           }}
@@ -67,19 +62,21 @@ const ShowsList = () => {
         </button>
       </form>
     ) : (
-      <div key={eachShow.id} className="show-card-styles">
-        <h4>{eachShow.title}</h4>
-        <h4>{eachShow.duration}</h4>
-        <button
-          onClick={(se) => {
-            handleDeleteClick(eachShow);
-          }}
-        >
-          X
-        </button>
-        <button onClick={(synthE) => setToggleEdit(!toggleEdit)}>
-          Edit 🎬
-        </button>
+      <div key={eachShow.id} className="container-fluid">
+        <div>
+          <h4>{eachShow.title}</h4>
+          <h4>{eachShow.duration}</h4>
+          <button className="btn btn-default"
+            onClick={(se) => {
+              handleDeleteClick(eachShow);
+            }}
+          >
+            X
+          </button>
+          <button className="btn btn-info" onClick={(synthE) => setToggleEdit(!toggleEdit)}>
+            Edit 🎬
+          </button>
+        </div>
       </div>
     );
   });
@@ -87,10 +84,11 @@ const ShowsList = () => {
   return (
     <>
       <div className="shows-list-styles">
-      
         <h2>All Shows List</h2>
-        <div className="rendered-shows">{showsToRender}</div>
       </div>
+      
+      <div className="rendered-shows">{showsToRender}</div>
+
       <div className="">
         <ShowsNewForm allShows={allShows} setAllShows={setAllShows} />
       </div>

@@ -16,8 +16,8 @@ function App() {
     <>
       <Router>
         <header>
-          <h1>
-            <em>ScreenViews</em>
+          <h1 className="purple-text text-center">
+           ScreenViews
           </h1>
           {/* <h2>-TEST- {var10_1} </h2> <br /> */}
           <NavBar />
